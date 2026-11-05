@@ -5,7 +5,7 @@ Projeto local de aprendizagem para um estúdio de massagens com uma profissional
 
 ## Current State
 
-**Stage / Etapa 3 of / de 4 — React booking interface / Interface React de marcações.**
+**Stage / Etapa 4 of / de 4 — Documentation and local workflow / Documentação e fluxo local.**
 
 This commit contains the capabilities listed below. Later stages are not available yet.
 Este commit contém as capacidades abaixo. As etapas posteriores ainda não estão disponíveis.
@@ -13,6 +13,7 @@ Este commit contém as capacidades abaixo. As etapas posteriores ainda não est�
 - **Reproducible workspace / Workspace reproduzível:** Pin runtimes, lock dependencies, create the Python package and provide a setup command. Fixar runtimes, bloquear dependências, criar o pacote Python e disponibilizar a instalação.
 - **Business rules and HTTP API / Regras de negócio e API HTTP:** Add the appointment domain, ports, adapters and executable PT/EN acceptance scenarios. Adicionar domínio de marcações, portas, adapters e cenários de aceitação executáveis PT/EN.
 - **React booking interface / Interface React de marcações:** Add feature-based components, the HTTP gateway, asynchronous states and component acceptance tests. Adicionar componentes por funcionalidade, gateway HTTP, estados assíncronos e testes de aceitação de componentes.
+- **Documentation and local workflow / Documentação e fluxo local:** Add Sphinx/TypeDoc references, learning guides, a shared glossary and the x/x+1 launcher. Adicionar referências Sphinx/TypeDoc, guias, glossário comum e o arranque nas portas x/x+1.
 
 ## Toolchain / Ferramentas
 
@@ -49,19 +50,17 @@ O exemplo reserva 60 minutos mais 15 de preparação, com armazenamento em memó
 These are teaching values, not confirmed studio policies. Restarting the backend clears the schedule.
 São valores didáticos, não políticas confirmadas do estúdio. Reiniciar o backend limpa a agenda.
 
-## Frontend / Frontend
-
-Keep the backend running on port 8000; start Vite in another terminal.
-Mantém o backend na porta 8000; inicia Vite noutro terminal.
+## Application and documentation / Aplicação e documentação
 
 ```bash
-npm run dev --workspace frontend -- --port 3000
-npm test
-npm run build
+npm run dev -- --port 3000
+npm run check
 ```
 
-The documentation link is prepared for the next stage; its server is not present yet.
-O link da documentação está preparado para a próxima etapa; o servidor ainda não existe.
+Application on `x`, documentation on `x+1`, HTTP API through `/api`. Ctrl+C stops every service.
+Aplicação em `x`, documentação em `x+1`, API HTTP através de `/api`. Ctrl+C termina todos os serviços.
+
+[English guide](docs/en/index.md) · [Guia português](docs/pt/index.md)
 
 ## Project Layout / Estrutura
 
@@ -72,6 +71,8 @@ backend/        # Python package / pacote Python
   tests/modules/appointments/
 acceptance/backend/appointments/
 acceptance/frontend/appointments/
+docs/pt/        # Portuguese guides / guias portugueses
+docs/en/        # English guides / guias ingleses
 scripts/        # Development tooling / ferramentas de desenvolvimento
 ```
 
@@ -84,7 +85,8 @@ A base existente está a ser organizada em commits progressivos e fáceis de rev
 |---|---|---|
 | 01 | `3a4e26f` | **Reproducible workspace / Workspace reproduzível** — Pin runtimes, lock dependencies, create the Python package and provide a setup command. Fixar runtimes, bloquear dependências, criar o pacote Python e disponibilizar a instalação. |
 | 02 | `57a5912` | **Business rules and HTTP API / Regras de negócio e API HTTP** — Add the appointment domain, ports, adapters and executable PT/EN acceptance scenarios. Adicionar domínio de marcações, portas, adapters e cenários de aceitação executáveis PT/EN. |
-| 03 | `this commit / este commit` | **React booking interface / Interface React de marcações** — Add feature-based components, the HTTP gateway, asynchronous states and component acceptance tests. Adicionar componentes por funcionalidade, gateway HTTP, estados assíncronos e testes de aceitação de componentes. |
+| 03 | `58c9abd` | **React booking interface / Interface React de marcações** — Add feature-based components, the HTTP gateway, asynchronous states and component acceptance tests. Adicionar componentes por funcionalidade, gateway HTTP, estados assíncronos e testes de aceitação de componentes. |
+| 04 | `this commit / este commit` | **Documentation and local workflow / Documentação e fluxo local** — Add Sphinx/TypeDoc references, learning guides, a shared glossary and the x/x+1 launcher. Adicionar referências Sphinx/TypeDoc, guias, glossário comum e o arranque nas portas x/x+1. |
 
 ## Next / Próximo
 
