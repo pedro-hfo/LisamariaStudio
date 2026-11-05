@@ -1,0 +1,13 @@
+{
+  "name": "lisamaria-studio",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "setup": "python3 scripts/setup.py"
+  }
+}

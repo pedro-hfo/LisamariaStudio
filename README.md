@@ -1,38 +1,59 @@
 # Lisamaria Studio
 
-A learning project for a massage studio with one practitioner.
-Projeto de aprendizagem para um estúdio de massagens com uma profissional.
+A local learning project for a massage studio with one practitioner.
+Projeto local de aprendizagem para um estúdio de massagens com uma profissional.
 
 ## Current State
 
-Project scope and Git workflow are defined. Implementation will arrive through feature branches.
-O âmbito do projeto e o fluxo Git estão definidos. A implementação será integrada através de branches.
+**Stage / Etapa 1 of / de 4 — Reproducible workspace / Workspace reproduzível.**
 
-## Planned Layout / Estrutura prevista
+This commit contains the capabilities listed below. Later stages are not available yet.
+Este commit contém as capacidades abaixo. As etapas posteriores ainda não estão disponíveis.
+
+- **Reproducible workspace / Workspace reproduzível:** Pin runtimes, lock dependencies, create the Python package and provide a setup command. Fixar runtimes, bloquear dependências, criar o pacote Python e disponibilizar a instalação.
+
+## Toolchain / Ferramentas
+
+| Area / Área | Tools / Ferramentas |
+|---|---|
+| Frontend | React · TypeScript · Vite |
+| Backend | Python 3.13 · FastAPI · uv |
+| Frontend tests / Testes frontend | Vitest · React Testing Library |
+| Business acceptance / Aceitação de negócio | pytest-bdd · Gherkin PT/EN |
+| Documentation / Documentação | Sphinx · autodoc · MyST · Furo · TypeDoc |
+
+## Setup / Instalação
+
+Requires Node 22.12+ (24 recommended), npm, uv and Python 3 for the installer.
+Requer Node 22.12+ (24 recomendado), npm, uv e Python 3 para o instalador.
+
+```bash
+npm run setup
+```
+
+The installer uses the committed lockfiles. / O instalador usa os lockfiles versionados.
+
+The application is not implemented at this stage. The next commit adds the backend.
+A aplicação ainda não está implementada nesta etapa. O próximo commit adiciona o backend.
+
+## Project Layout / Estrutura
 
 ```text
-frontend/    # React + TypeScript
-backend/     # Python + FastAPI, DDD and hexagonal architecture
-acceptance/  # Tests mirroring business modules / testes paralelos aos módulos
-scripts/     # Development tooling / ferramentas de desenvolvimento
-docs/pt/     # Portuguese documentation / documentação portuguesa
-docs/en/     # English documentation / documentação inglesa
+frontend/       # React workspace / workspace React
+backend/        # Python package / pacote Python
+scripts/        # Development tooling / ferramentas de desenvolvimento
 ```
 
 ## Evolution
 
-This initial commit records the project scope. No application capability has been merged yet.
-Este commit inicial regista o âmbito. Ainda não foi integrada nenhuma capacidade da aplicação.
+The existing foundation is being organised into progressive, reviewable commits.
+A base existente está a ser organizada em commits progressivos e fáceis de rever.
 
-1. Reproducible toolchain / Ferramentas reproduzíveis.
-2. Appointment domain and API / Domínio de marcações e API.
-3. React booking interface / Interface React de marcações.
-4. Bilingual documentation and local servers / Documentação bilingue e servidores locais.
+| Step / Etapa | Commit | Improvement / Melhoria |
+|---|---|---|
+| 01 | `this commit / este commit` | **Reproducible workspace / Workspace reproduzível** — Pin runtimes, lock dependencies, create the Python package and provide a setup command. Fixar runtimes, bloquear dependências, criar o pacote Python e disponibilizar a instalação. |
 
-These steps are planned, not completed. / Estas etapas estão planeadas, não concluídas.
+## Next / Próximo
 
-## Commit and Merge Workflow / Fluxo de commits e merges
-
-Use a named branch for each step and descriptive implementation commits. Integrate with an explicit merge commit. Update Evolution, Current State and affected documentation as part of the merge; intermediate branch commits do not need fully updated documentation.
-
-Usa uma branch com nome para cada etapa e commits de implementação descritivos. Integra com um merge commit explícito. Atualiza Evolution, Current State e a documentação afetada no merge; os commits intermédios da branch não precisam de ter toda a documentação atualizada.
+Pending product work: real service catalogue and policies, persistence, authentication, live availability and SIBS payments.
+Trabalho de produto pendente: catálogo e políticas reais, persistência, autenticação, disponibilidade em tempo real e pagamentos SIBS.
