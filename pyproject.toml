@@ -1,0 +1,43 @@
+[project]
+name = "lisamaria-studio"
+version = "0.1.0"
+description = "Learning foundation for a massage studio / Base de aprendizagem para um estúdio de massagens"
+requires-python = ">=3.13,<3.14"
+dependencies = ["fastapi>=0.115,<1", "uvicorn[standard]>=0.34,<1"]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3,<9", "pytest-bdd>=8,<9", "httpx2>=2.16,<3",
+  "ruff>=0.11,<1", "mypy>=1.15,<2",
+  "sphinx>=8,<10", "sphinx-autobuild>=2024", "furo>=2024",
+  "myst-parser>=4,<6"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["backend/src/lisamaria"]
+
+[tool.pytest.ini_options]
+testpaths = ["backend/tests", "acceptance/backend", "scripts/tests"]
+addopts = "-ra"
+markers = [
+  "appointments: appointment business context",
+  "APT-001: available time slot", "APT-002: overlapping appointment",
+  "APT-003: preparation buffer", "APT-004: adjacent appointment",
+  "APT-005: past appointment"
+]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+files = ["backend/src"]
