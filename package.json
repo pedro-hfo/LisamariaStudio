@@ -8,6 +8,8 @@
     "node": ">=22.12"
   },
   "scripts": {
-    "setup": "python3 scripts/setup.py"
+    "setup": "python3 scripts/setup.py",
+    "test": "npm run test --workspace frontend",
+    "build": "npm run build --workspace frontend"
   }
 }
