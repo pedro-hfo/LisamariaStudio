@@ -5,13 +5,14 @@ Projeto local de aprendizagem para um estúdio de massagens com uma profissional
 
 ## Current State
 
-**Stage / Etapa 2 of / de 4 — Business rules and HTTP API / Regras de negócio e API HTTP.**
+**Stage / Etapa 3 of / de 4 — React booking interface / Interface React de marcações.**
 
 This commit contains the capabilities listed below. Later stages are not available yet.
 Este commit contém as capacidades abaixo. As etapas posteriores ainda não estão disponíveis.
 
 - **Reproducible workspace / Workspace reproduzível:** Pin runtimes, lock dependencies, create the Python package and provide a setup command. Fixar runtimes, bloquear dependências, criar o pacote Python e disponibilizar a instalação.
 - **Business rules and HTTP API / Regras de negócio e API HTTP:** Add the appointment domain, ports, adapters and executable PT/EN acceptance scenarios. Adicionar domínio de marcações, portas, adapters e cenários de aceitação executáveis PT/EN.
+- **React booking interface / Interface React de marcações:** Add feature-based components, the HTTP gateway, asynchronous states and component acceptance tests. Adicionar componentes por funcionalidade, gateway HTTP, estados assíncronos e testes de aceitação de componentes.
 
 ## Toolchain / Ferramentas
 
@@ -48,6 +49,20 @@ O exemplo reserva 60 minutos mais 15 de preparação, com armazenamento em memó
 These are teaching values, not confirmed studio policies. Restarting the backend clears the schedule.
 São valores didáticos, não políticas confirmadas do estúdio. Reiniciar o backend limpa a agenda.
 
+## Frontend / Frontend
+
+Keep the backend running on port 8000; start Vite in another terminal.
+Mantém o backend na porta 8000; inicia Vite noutro terminal.
+
+```bash
+npm run dev --workspace frontend -- --port 3000
+npm test
+npm run build
+```
+
+The documentation link is prepared for the next stage; its server is not present yet.
+O link da documentação está preparado para a próxima etapa; o servidor ainda não existe.
+
 ## Project Layout / Estrutura
 
 ```text
@@ -56,6 +71,7 @@ backend/        # Python package / pacote Python
   src/lisamaria/modules/appointments/
   tests/modules/appointments/
 acceptance/backend/appointments/
+acceptance/frontend/appointments/
 scripts/        # Development tooling / ferramentas de desenvolvimento
 ```
 
@@ -67,7 +83,8 @@ A base existente está a ser organizada em commits progressivos e fáceis de rev
 | Step / Etapa | Commit | Improvement / Melhoria |
 |---|---|---|
 | 01 | `3baa3e5` | **Reproducible workspace / Workspace reproduzível** — Pin runtimes, lock dependencies, create the Python package and provide a setup command. Fixar runtimes, bloquear dependências, criar o pacote Python e disponibilizar a instalação. |
-| 02 | `this commit / este commit` | **Business rules and HTTP API / Regras de negócio e API HTTP** — Add the appointment domain, ports, adapters and executable PT/EN acceptance scenarios. Adicionar domínio de marcações, portas, adapters e cenários de aceitação executáveis PT/EN. |
+| 02 | `987c142` | **Business rules and HTTP API / Regras de negócio e API HTTP** — Add the appointment domain, ports, adapters and executable PT/EN acceptance scenarios. Adicionar domínio de marcações, portas, adapters e cenários de aceitação executáveis PT/EN. |
+| 03 | `this commit / este commit` | **React booking interface / Interface React de marcações** — Add feature-based components, the HTTP gateway, asynchronous states and component acceptance tests. Adicionar componentes por funcionalidade, gateway HTTP, estados assíncronos e testes de aceitação de componentes. |
 
 ## Next / Próximo
 
