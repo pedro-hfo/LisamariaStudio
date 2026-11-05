@@ -5,12 +5,13 @@ Projeto local de aprendizagem para um estúdio de massagens com uma profissional
 
 ## Current State
 
-**Stage / Etapa 1 of / de 4 — Reproducible workspace / Workspace reproduzível.**
+**Stage / Etapa 2 of / de 4 — Business rules and HTTP API / Regras de negócio e API HTTP.**
 
 This commit contains the capabilities listed below. Later stages are not available yet.
 Este commit contém as capacidades abaixo. As etapas posteriores ainda não estão disponíveis.
 
 - **Reproducible workspace / Workspace reproduzível:** Pin runtimes, lock dependencies, create the Python package and provide a setup command. Fixar runtimes, bloquear dependências, criar o pacote Python e disponibilizar a instalação.
+- **Business rules and HTTP API / Regras de negócio e API HTTP:** Add the appointment domain, ports, adapters and executable PT/EN acceptance scenarios. Adicionar domínio de marcações, portas, adapters e cenários de aceitação executáveis PT/EN.
 
 ## Toolchain / Ferramentas
 
@@ -33,14 +34,28 @@ npm run setup
 
 The installer uses the committed lockfiles. / O instalador usa os lockfiles versionados.
 
-The application is not implemented at this stage. The next commit adds the backend.
-A aplicação ainda não está implementada nesta etapa. O próximo commit adiciona o backend.
+## Backend / Backend
+
+```bash
+.venv/bin/uvicorn lisamaria.bootstrap:create_app --factory --port 8000
+.venv/bin/pytest backend/tests acceptance/backend -v
+```
+
+API reference / Referência API: <http://127.0.0.1:8000/api/docs>.
+
+The example reserves 60 minutes plus a 15-minute buffer, using in-memory storage.
+O exemplo reserva 60 minutos mais 15 de preparação, com armazenamento em memória.
+These are teaching values, not confirmed studio policies. Restarting the backend clears the schedule.
+São valores didáticos, não políticas confirmadas do estúdio. Reiniciar o backend limpa a agenda.
 
 ## Project Layout / Estrutura
 
 ```text
 frontend/       # React workspace / workspace React
 backend/        # Python package / pacote Python
+  src/lisamaria/modules/appointments/
+  tests/modules/appointments/
+acceptance/backend/appointments/
 scripts/        # Development tooling / ferramentas de desenvolvimento
 ```
 
@@ -51,7 +66,8 @@ A base existente está a ser organizada em commits progressivos e fáceis de rev
 
 | Step / Etapa | Commit | Improvement / Melhoria |
 |---|---|---|
-| 01 | `this commit / este commit` | **Reproducible workspace / Workspace reproduzível** — Pin runtimes, lock dependencies, create the Python package and provide a setup command. Fixar runtimes, bloquear dependências, criar o pacote Python e disponibilizar a instalação. |
+| 01 | `3baa3e5` | **Reproducible workspace / Workspace reproduzível** — Pin runtimes, lock dependencies, create the Python package and provide a setup command. Fixar runtimes, bloquear dependências, criar o pacote Python e disponibilizar a instalação. |
+| 02 | `this commit / este commit` | **Business rules and HTTP API / Regras de negócio e API HTTP** — Add the appointment domain, ports, adapters and executable PT/EN acceptance scenarios. Adicionar domínio de marcações, portas, adapters e cenários de aceitação executáveis PT/EN. |
 
 ## Next / Próximo
 
