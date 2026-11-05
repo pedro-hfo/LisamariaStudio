@@ -9,7 +9,11 @@
   },
   "scripts": {
     "setup": "python3 scripts/setup.py",
+    "dev": "python3 scripts/dev.py",
+    "check": "python3 scripts/check.py",
     "test": "npm run test --workspace frontend",
-    "build": "npm run build --workspace frontend"
+    "build": "npm run build --workspace frontend",
+    "docs:frontend": "npm run docs --workspace frontend",
+    "docs:build": ".venv/bin/sphinx-build -W --keep-going -b html docs build/docs"
   }
 }
