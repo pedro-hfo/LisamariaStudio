@@ -16,6 +16,7 @@ Learn to build Lisamaria Studio through small, complete features.
 :maxdepth: 1
 
 getting-started
+deployment
 architecture
 glossary
 modules/appointments

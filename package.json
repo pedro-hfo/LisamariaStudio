@@ -13,6 +13,7 @@
     "check": "python3 scripts/check.py",
     "test": "npm run test --workspace frontend",
     "build": "npm run build --workspace frontend",
+    "build:pages": "python3 scripts/build_pages.py",
     "docs:frontend": "npm run docs --workspace frontend",
     "docs:build": ".venv/bin/sphinx-build -W --keep-going -b html docs build/docs"
   }

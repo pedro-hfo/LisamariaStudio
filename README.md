@@ -8,8 +8,14 @@ Projeto local de aprendizagem para um estúdio de massagens com uma profissional
 
 ## Current State
 
-**Local learning foundation, with four implementation stages integrated.**
-**Base local de aprendizagem, com quatro etapas de implementação integradas.**
+[Website](https://pedro-hfo.github.io/LisamariaStudio/) · [Guias PT](https://pedro-hfo.github.io/LisamariaStudio/docs/pt/index.html) · [EN guides](https://pedro-hfo.github.io/LisamariaStudio/docs/en/index.html)
+
+GitHub Pages serves the static presentation and documentation. The booking example runs locally with Python; it is not enabled on the hosted preview. Each push to `main` runs checks before deployment.
+
+O GitHub Pages serve a apresentação estática e a documentação. O exemplo de marcações funciona localmente com Python; não está ativo na apresentação publicada. Cada push para `main` executa verificações antes do deploy.
+
+**Learning foundation with a GitHub Pages preview and bilingual documentation.**
+**Base de aprendizagem com apresentação no GitHub Pages e documentação bilingue.**
 
 | Area / Área | Working today / Disponível atualmente |
 |---|---|
@@ -30,7 +36,7 @@ A demonstração usa **armazenamento em memória**, uma **sessão de 60 minutos*
 
 ### Validation / Validação
 
-- **21 Python tests + 4 Vitest tests pass**, including both Gherkin languages, concurrency, module boundaries and documentation parity. / **21 testes Python + 4 testes Vitest passam**, incluindo as duas línguas Gherkin, concorrência, fronteiras dos módulos e paridade da documentação.
+- **21 Python tests + 5 Vitest tests pass**, including both Gherkin languages, concurrency, module boundaries and documentation parity. / **21 testes Python + 5 testes Vitest passam**, incluindo as duas línguas Gherkin, concorrência, fronteiras dos módulos e paridade da documentação.
 - Frontend build, Ruff, mypy and strict Sphinx build pass. / Build frontend, Ruff, mypy e build estrito Sphinx passam.
 - Launcher startup/shutdown and live guide/Python/TypeScript reference updates were verified during the foundation setup; their implementation is unchanged by this commit reorganisation. / O arranque/encerramento e as atualizações automáticas dos guias e referências Python/TypeScript foram verificados na preparação da base; a implementação mantém-se nesta reorganização dos commits.
 
@@ -136,14 +142,15 @@ Usa `--port x` para outra porta da aplicação; a documentação fica em `x+1`. 
 | `npm test` | Run frontend component acceptance tests. / Executar testes de aceitação de componentes. |
 | `.venv/bin/pytest acceptance/backend -v` | Run PT/EN BDD scenarios. / Executar cenários BDD PT/EN. |
 | `npm run build` | Type-check and build the frontend. / Verificar tipos e construir o frontend. |
+| `npm run build:pages` | Build the static preview and guides into `build/pages`. / Construir apresentação estática e guias em `build/pages`. |
 | `npm run docs:build` | Build documentation, treating warnings as errors. / Construir documentação, tratando avisos como erros. |
 | `npm run dev -- --port 4100 --check` | Start, verify and stop the local services. / Iniciar, verificar e terminar os serviços locais. |
 
 ## Evolution
 
-The foundation is organised into four implementation branches, each integrated into `main` by a descriptive **merge commit**. Documentation is brought up to date at the merge boundary. The rows below describe completed work, not planned features.
+The project is organised into five implementation branches, each integrated into `main` by a descriptive **merge commit**. Documentation is brought up to date at the merge boundary. The rows below describe completed work, not planned features.
 
-A base está organizada em quatro branches de implementação, cada uma integrada em `main` através de um **merge commit** descritivo. A documentação é atualizada no momento do merge. As linhas seguintes descrevem trabalho concluído, não funcionalidades planeadas.
+O projeto está organizado em cinco branches de implementação, cada uma integrada em `main` através de um **merge commit** descritivo. A documentação é atualizada no momento do merge. As linhas seguintes descrevem trabalho concluído, não funcionalidades planeadas.
 
 | Step / Etapa | Branch · implementation commit / commit de implementação | Improvement / Melhoria | Verification / Verificação |
 |---|---|---|---|
@@ -151,6 +158,8 @@ A base está organizada em quatro branches de implementação, cada uma integrad
 | 02 | `feature/appointments-api` · `987c142` | Add appointment domain, hexagonal API and PT/EN BDD. / Adicionar domínio de marcações, API hexagonal e BDD PT/EN. | 14 backend tests pass. / 14 testes backend passam. |
 | 03 | `feature/booking-ui` · `c550cb7` | Add the React form, gateway, asynchronous states and responsive styling. / Adicionar formulário React, gateway, estados assíncronos e apresentação adaptável. | 4 Vitest tests and frontend build pass. / 4 testes Vitest e build frontend passam. |
 | 04 | `docs/developer-workflow` · `94c43dd` | Add Sphinx PT/EN guides, code references, glossary, coordinated servers and this evolution overview. / Adicionar guias Sphinx PT/EN, referências de código, glossário, servidores coordenados e este histórico. | 7 tooling/documentation tests, Ruff, mypy and strict Sphinx build pass. / 7 testes de ferramentas/documentação, Ruff, mypy e build estrito Sphinx passam. |
+
+| 05 | `ci/github-pages` · `d4f3b43` | Add Actions validation/deployment, a static Pages preview and published PT/EN guides. / Adicionar validação/deploy Actions, apresentação estática no Pages e guias PT/EN publicados. | 21 Python and 5 Vitest tests; frontend, Sphinx and Pages builds. / 21 testes Python e 5 Vitest; builds frontend, Sphinx e Pages. |
 
 ### Follow the progression / Acompanhar a evolução
 
@@ -210,3 +219,4 @@ git commit -m "merge: integrate <step> and update project documentation"
 | React patterns / Padrões React | [Frontend module](docs/en/modules/frontend.md) | [Módulo frontend](docs/pt/modules/frontend.md) |
 | BDD and acceptance / BDD e aceitação | [Acceptance guide](docs/en/acceptance/appointments.md) | [Guia de aceitação](docs/pt/acceptance/appointments.md) |
 | Documentation depth / Profundidade da documentação | [Documentation guide](docs/en/documentation.md) | [Guia de documentação](docs/pt/documentation.md) |
+| Publishing / Publicação | [GitHub Pages](docs/en/deployment.md) | [GitHub Pages](docs/pt/deployment.md) |
