@@ -1,0 +1,14 @@
+{
+  "entryPoints": ["src/modules", "src/shared"],
+  "entryPointStrategy": "expand",
+  "tsconfig": "tsconfig.json",
+  "plugin": ["typedoc-plugin-markdown"],
+  "out": "../build/typedoc",
+  "readme": "none",
+  "entryFileName": "index",
+  "router": "module",
+  "hideBreadcrumbs": true,
+  "hidePageHeader": true,
+  "disableSources": true,
+  "excludePrivate": true
+}
